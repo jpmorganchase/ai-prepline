@@ -1,0 +1,68 @@
+[tool.poetry]
+authors = ["AI2 Team <Applied_Innovation_AI@restricted.chase.com>"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+description = "ai_prepline is a python library that assists with the creation of data-processing pipelines."
+license = "Copyright, JP Morgan Chase & Co. 2022"
+name = "ai_prepline"
+version = "1.0.0"
+
+
+[tool.poetry.dependencies]
+drain3 = "^0.9.11"
+numpy = "^1.23.5"
+pandas = "^1.5.2"
+pandera = "0.13.4"
+python = ">=3.8,<=3.11.4"
+scikit-learn = "^1.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.8.0"
+pytest = "^8.3.4"
+ 
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+allow_redefinition = true
+ignore_missing_imports = true
+show_error_codes = true
+warn_no_return = true
+
+[tool.black]
+line-length = 88
+
+[tool.pylint.BASIC]
+good-names = ["i", "j", "k", "n", "f", "fp", "fd", "s"]
+
+[tool.pylint."MESSAGES CONTROL"]
+max-line-length = 88
+
+disable = [
+  "invalid-name",
+  "missing-docstring",
+  "too-few-public-methods",
+  "too-many-ancestors",
+  "too-many-instance-attributes",
+  "too-many-locals",
+  "too-many-nested-blocks",
+  "too-many-public-methods",
+  "too-many-statements",
+  "pointless-statement",
+  "fixme",
+  "too-many-arguments",
+  "unnecessary-lambda-assignment",
+  "singleton-comparison",
+]
+
+[tool.pylint."FORMAT"]
+max-branches = 8
+max-line-length = 88
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
